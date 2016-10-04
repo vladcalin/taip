@@ -1,7 +1,7 @@
 # Surse pentru disciplina Tehnici Avansate de Inginerie a Programarii
 
 Aici vom urca sursele aferente acestei discipline.
-Aceasta disciplina se desfasoara in cadrul [Facultatii de Informatica din cadrul Universitatii "Alexandru Ioan Cuza" din Iasi](url_info_uaic).
+Aceasta disciplina se desfasoara in cadrul [Facultatii de Informatica din cadrul Universitatii "Alexandru Ioan Cuza" din Iasi][url_info_uaic].
 
 # Colaboratori
 
