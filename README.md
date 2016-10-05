@@ -10,6 +10,7 @@ Principalele persoane care vor contribui sunt:
 - Calin Stefan-Vlad (https://github.com/vladcalin)
 - Cimpan Mihai (https://github.com/MihaiCimpan)
 - Oancea Irina
+- Berendea Nicolae (https://github.com/berendeanicolae)
 
 Pentru mai multe informatii referitoare la contribuita in acest repo, consultati [pagina aceasta](CONTRIBUTE.md)
 
