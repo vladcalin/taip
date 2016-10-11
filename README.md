@@ -11,6 +11,7 @@ Principalele persoane care vor contribui sunt:
 - Cimpan Mihai (https://github.com/MihaiCimpan)
 - Oancea Irina
 - Berendea Nicolae (https://github.com/berendeanicolae)
+- Ionel Ştefănucă
 
 Pentru mai multe informatii referitoare la contribuita in acest repo, consultati [pagina aceasta](CONTRIBUTE.md)
 
