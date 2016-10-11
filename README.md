@@ -9,7 +9,7 @@ Principalele persoane care vor contribui sunt:
 
 - Calin Stefan-Vlad (https://github.com/vladcalin)
 - Cimpan Mihai (https://github.com/MihaiCimpan)
-- Oancea Irina
+- Oancea Irina (https://github.com/Irina00)
 - Berendea Nicolae (https://github.com/berendeanicolae)
 - Ionel Ştefănucă (https://github.com/ionelstefanuca)
 
