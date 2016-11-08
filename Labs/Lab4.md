@@ -1,7 +1,6 @@
 Oancea Irina
-  Composite (https://github.com/vladcalin/taip/blob/master/server/users/IUser.py)
-  
-  Iterator (https://github.com/vladcalin/taip/blob/master/server/users/Iterator.py)
+- Composite (https://github.com/vladcalin/taip/blob/master/server/users/IUser.py)
+- Iterator (https://github.com/vladcalin/taip/blob/master/server/users/Iterator.py)
 
 Calin Vlad
 
