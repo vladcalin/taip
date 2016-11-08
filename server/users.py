@@ -48,8 +48,31 @@ class UserIterator:
 
 
 class ModelTemplate(abc.ABC):
+    """
+    Methods defined for the table creation algorithm.
+
+    table_decl = "CREATE TABLE {}".format(get_entity_name())
+    for field in get_fields():
+        field_type = get_field_type(field)
+        table_decl += add_field_declaration(field, field_type)
+
+    execute_sql(table_decl)
+    """
+
     @abc.abstractmethod
     def get_iterator_class(self):
+        pass
+
+    @abc.abstractmethod
+    def get_fields(self):
+        pass
+
+    @abc.abstractmethod
+    def get_field_type(self):
+        pass
+
+    @abc.abstractmethod
+    def get_entity_name(self):
         pass
 
 
@@ -60,3 +83,12 @@ class User(ModelTemplate):
 
     def get_iterator_class(self):
         return UserIterator
+
+    def get_entity_name(self):
+        pass
+
+    def get_fields(self):
+        pass
+
+    def get_field_type(self):
+        pass
