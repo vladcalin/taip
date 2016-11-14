@@ -1,3 +1,9 @@
+package ssh.scheme;
+
+import ssh.param.ISchemeParams;
+import ssh.secret.ISecret;
+import ssh.secret.ISubSecret;
+
 import java.util.ArrayList;
 
 /**

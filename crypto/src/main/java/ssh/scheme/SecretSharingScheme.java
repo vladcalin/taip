@@ -1,3 +1,5 @@
+package ssh.scheme;
+
 /**
  * Created by nberendea on 11/8/2016.
  */

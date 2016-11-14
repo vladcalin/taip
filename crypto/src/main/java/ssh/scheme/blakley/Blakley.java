@@ -1,9 +1,16 @@
+package ssh.scheme.blakley;
+
+import ssh.scheme.IScheme;
+import ssh.param.ISchemeParams;
+import ssh.secret.ISecret;
+import ssh.secret.ISubSecret;
+
 import java.util.ArrayList;
 
 /**
  * Created by nberendea on 11/8/2016.
  */
-public class Mignotte implements IScheme{
+public class Blakley implements IScheme {
     public void setParams(ISchemeParams params) {
 
     }
