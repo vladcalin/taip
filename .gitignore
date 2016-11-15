@@ -1,3 +1,9 @@
 .idea/
 .hg/
 __pycache__/
+/crypto/nbproject/private/
+nbproject/
+manifest.mf
+build.xml
+lib/
+/crypto/build/
