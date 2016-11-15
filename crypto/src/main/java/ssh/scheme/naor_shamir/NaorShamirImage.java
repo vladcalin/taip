@@ -1,6 +1,7 @@
 package ssh.scheme.naor_shamir;
 
 import javax.imageio.ImageIO;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -30,9 +31,9 @@ public abstract class NaorShamirImage {
     }
 
     public void save(String path) {
-        BufferedImage bi = new BufferedImage(width, height, BufferedImage.TYPE_BYTE_BINARY);
+        BufferedImage bi = new BufferedImage(width, height, BufferedImage.TYPE_3BYTE_BGR);
         for (int i=0; i<pixels.length; ++i) {
-            bi.setRGB(i%width, i/width, pixels[i] ? 1 : 0);
+            bi.setRGB(i%width, i/width, pixels[i] ? new Color(0, 0, 0).getRGB() : new Color(255, 255, 255).getRGB());
         }
         try {
             ImageIO.write(bi, "BMP", new File(path));
@@ -50,7 +51,8 @@ public abstract class NaorShamirImage {
             pixels = new boolean[width*height];
             for (int i=0; i<height; ++i) {
                 for (int j=0; j<width; ++j) {
-                    pixels[j*width+i] = image.getRGB(i, j)!=0 ? true : false;
+                    Color pixel = new Color(image.getRGB(i, j));
+                    pixels[j*width+i] = (pixel.getRed()!=0 || pixel.getGreen()!=0 || pixel.getBlue()!=0) ? false : true;
                 }
             }
         } catch (IOException e) {

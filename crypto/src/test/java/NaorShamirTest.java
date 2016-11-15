@@ -6,6 +6,9 @@ import junit.framework.*;
 import ssh.scheme.naor_shamir.NaorShamirParams;
 import ssh.scheme.naor_shamir.NaorShamirSecret;
 
+import java.util.Arrays;
+
+
 public class NaorShamirTest extends TestCase{
     public void testParams() {
         NaorShamirParams params = new NaorShamirParams();
@@ -65,6 +68,6 @@ public class NaorShamirTest extends TestCase{
         s.set(2, 2, img);
         s.save("img.bmp");
         s.load("img.bmp");
-        assertEquals(img, s.getPixels());
+        assertTrue(Arrays.equals(img, s.getPixels()));
     }
 }
