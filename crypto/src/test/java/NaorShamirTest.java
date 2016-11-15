@@ -4,6 +4,7 @@
 
 import junit.framework.*;
 import ssh.scheme.naor_shamir.NaorShamirParams;
+import ssh.scheme.naor_shamir.NaorShamirSecret;
 
 public class NaorShamirTest extends TestCase{
     public void testParams() {
@@ -16,33 +17,27 @@ public class NaorShamirTest extends TestCase{
         try {
             params.setN(0);
             fail("Expected an IllegalArgumentException to be thrown");
-        }
-        catch (IllegalArgumentException e) {
+        } catch (IllegalArgumentException e) {
             assertEquals(e.getMessage(), null);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             fail("Expected an IllegalArgumentException to be thrown");
         }
 
         try {
             params.setN(-1);
             fail("Expected an IllegalArgumentException to be thrown");
-        }
-        catch (IllegalArgumentException e) {
+        } catch (IllegalArgumentException e) {
             assertEquals(e.getMessage(), null);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             fail("Expected an IllegalArgumentException to be thrown");
         }
 
         try {
             params.setK(0);
             fail("Expected an IllegalArgumentException to be thrown");
-        }
-        catch (IllegalArgumentException e) {
+        } catch (IllegalArgumentException e) {
             assertEquals(e.getMessage(), null);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             fail("Expected an IllegalArgumentException to be thrown");
         }
 
@@ -50,11 +45,9 @@ public class NaorShamirTest extends TestCase{
         try {
             params.setK(-1);
             fail("Expected an IllegalArgumentException to be thrown");
-        }
-        catch (IllegalArgumentException e) {
+        } catch (IllegalArgumentException e) {
             assertEquals(e.getMessage(), null);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             fail("Expected an IllegalArgumentException to be thrown");
         }
 
@@ -63,5 +56,15 @@ public class NaorShamirTest extends TestCase{
 
         k = 100;
         assertEquals(params.setK(k).getK(), k);
+    }
+
+    public void testSecret() {
+        NaorShamirSecret s = new NaorShamirSecret();
+        boolean img[] = new boolean[]{true, false, false, true};
+
+        s.set(2, 2, img);
+        s.save("img.bmp");
+        s.load("img.bmp");
+        assertEquals(img, s.getPixels());
     }
 }
