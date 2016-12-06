@@ -16,3 +16,11 @@ Berendea Nicolae
 - Factory (https://github.com/vladcalin/taip/blob/master/crypto/src/main/java/SchemeFactory.java)
 - Builder (https://github.com/vladcalin/taip/blob/master/crypto/src/main/java/ISchemeParamsBuilder.java)
 - Parameter Object (https://github.com/vladcalin/taip/blob/master/crypto/src/main/java/ISchemeParams.java)
+
+Cimpan Mihai
+
+https://github.com/vladcalin/taip/tree/master/Labs/lab4/Lab4_CimpanMihai
+
+- Mediator
+- Iterator
+
