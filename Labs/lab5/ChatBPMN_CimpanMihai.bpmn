@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="sid-38422fae-e03e-43a3-bef4-bd33b32041b2" targetNamespace="http://bpmn.io/bpmn" exporter="http://bpmn.io" exporterVersion="0.10.1">
+  <process id="Process_1" isExecutable="false">
+    <task id="Task_1" name="Users start sharing their subsecrets">
+      <incoming>SequenceFlow_1</incoming>
+      <outgoing>SequenceFlow_2</outgoing>
+    </task>
+    <exclusiveGateway id="ExclusiveGateway_1" name="" gatewayDirection="Diverging">
+      <incoming>SequenceFlow_2</incoming>
+      <incoming>SequenceFlow_0ufoin5</incoming>
+      <outgoing>SequenceFlow_0dbn2x8</outgoing>
+    </exclusiveGateway>
+    <sequenceFlow id="SequenceFlow_2" sourceRef="Task_1" targetRef="ExclusiveGateway_1" />
+    <startEvent id="StartEvent_1" name="Users">
+      <outgoing>SequenceFlow_1</outgoing>
+    </startEvent>
+    <sequenceFlow id="SequenceFlow_1" name="" sourceRef="StartEvent_1" targetRef="Task_1" />
+    <task id="Task_08tga1e" name="Try to compose the secret">
+      <incoming>SequenceFlow_0dbn2x8</incoming>
+      <outgoing>SequenceFlow_1y8s9p9</outgoing>
+    </task>
+    <sequenceFlow id="SequenceFlow_0dbn2x8" name="Success" sourceRef="ExclusiveGateway_1" targetRef="Task_08tga1e" />
+    <exclusiveGateway id="ExclusiveGateway_1f47atc">
+      <incoming>SequenceFlow_1y8s9p9</incoming>
+      <outgoing>SequenceFlow_1b49lmk</outgoing>
+      <outgoing>SequenceFlow_074dvo4</outgoing>
+      <outgoing>SequenceFlow_0ta0uz2</outgoing>
+    </exclusiveGateway>
+    <sequenceFlow id="SequenceFlow_1y8s9p9" name="Success" sourceRef="Task_08tga1e" targetRef="ExclusiveGateway_1f47atc" />
+    <task id="Task_00m7t2d" name="Wait for more users to share their subsecrets">
+      <incoming>SequenceFlow_1b49lmk</incoming>
+      <incoming>SequenceFlow_074dvo4</incoming>
+      <outgoing>SequenceFlow_0ufoin5</outgoing>
+    </task>
+    <sequenceFlow id="SequenceFlow_0ufoin5" name="Failure" sourceRef="Task_00m7t2d" targetRef="ExclusiveGateway_1" />
+    <sequenceFlow id="SequenceFlow_1b49lmk" name="Failure" sourceRef="ExclusiveGateway_1f47atc" targetRef="Task_00m7t2d" />
+    <sequenceFlow id="SequenceFlow_074dvo4" sourceRef="ExclusiveGateway_1f47atc" targetRef="Task_00m7t2d" />
+    <endEvent id="EndEvent_1smos1f" name="Success in composing the secret">
+      <incoming>SequenceFlow_0ta0uz2</incoming>
+    </endEvent>
+    <sequenceFlow id="SequenceFlow_0ta0uz2" sourceRef="ExclusiveGateway_1f47atc" targetRef="EndEvent_1smos1f" />
+  </process>
+  <bpmndi:BPMNDiagram id="BpmnDiagram_1">
+    <bpmndi:BPMNPlane id="BpmnPlane_1" bpmnElement="Process_1">
+      <bpmndi:BPMNShape id="Task_1_gui" bpmnElement="Task_1">
+        <omgdc:Bounds x="340" y="162" width="100" height="80" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="118.85714721679688" y="47" width="82.28570556640625" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ExclusiveGateway_1_gui" bpmnElement="ExclusiveGateway_1" isMarkerVisible="true">
+        <omgdc:Bounds x="508" y="182" width="40" height="40" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="528" y="225" width="0" height="0" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_2_di" bpmnElement="SequenceFlow_2">
+        <omgdi:waypoint xsi:type="omgdc:Point" x="440" y="202" />
+        <omgdi:waypoint xsi:type="omgdc:Point" x="508" y="202" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="478" y="192" width="0" height="0" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="StartEvent_1_gui" bpmnElement="StartEvent_1">
+        <omgdc:Bounds x="242" y="187" width="30" height="30" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="243" y="217" width="29" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1_gui" bpmnElement="SequenceFlow_1">
+        <omgdi:waypoint xsi:type="omgdc:Point" x="272" y="202" />
+        <omgdi:waypoint xsi:type="omgdc:Point" x="340" y="202" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="303" y="176" width="0" height="0" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_08tga1e_di" bpmnElement="Task_08tga1e">
+        <omgdc:Bounds x="627.7130801687764" y="75.79831223628693" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0dbn2x8_di" bpmnElement="SequenceFlow_0dbn2x8">
+        <omgdi:waypoint xsi:type="omgdc:Point" x="528" y="182" />
+        <omgdi:waypoint xsi:type="omgdc:Point" x="528" y="116" />
+        <omgdi:waypoint xsi:type="omgdc:Point" x="628" y="116" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="544" y="92" width="44" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ExclusiveGateway_1f47atc_di" bpmnElement="ExclusiveGateway_1f47atc" isMarkerVisible="true">
+        <omgdc:Bounds x="813.671729957806" y="177" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="839" y="227" width="0" height="0" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1y8s9p9_di" bpmnElement="SequenceFlow_1y8s9p9">
+        <omgdi:waypoint xsi:type="omgdc:Point" x="728" y="116" />
+        <omgdi:waypoint xsi:type="omgdc:Point" x="839" y="116" />
+        <omgdi:waypoint xsi:type="omgdc:Point" x="839" y="177" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="762" y="93" width="44" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_00m7t2d_di" bpmnElement="Task_00m7t2d">
+        <omgdc:Bounds x="644" y="240" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0ufoin5_di" bpmnElement="SequenceFlow_0ufoin5">
+        <omgdi:waypoint xsi:type="omgdc:Point" x="644" y="280" />
+        <omgdi:waypoint xsi:type="omgdc:Point" x="528" y="280" />
+        <omgdi:waypoint xsi:type="omgdc:Point" x="528" y="222" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="564" y="257" width="33" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1b49lmk_di" bpmnElement="SequenceFlow_1b49lmk">
+        <omgdi:waypoint xsi:type="omgdc:Point" x="839" y="227" />
+        <omgdi:waypoint xsi:type="omgdc:Point" x="839" y="280" />
+        <omgdi:waypoint xsi:type="omgdc:Point" x="744" y="280" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="770" y="254.5" width="33" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_074dvo4_di" bpmnElement="SequenceFlow_074dvo4">
+        <omgdi:waypoint xsi:type="omgdc:Point" x="839" y="227" />
+        <omgdi:waypoint xsi:type="omgdc:Point" x="839" y="280" />
+        <omgdi:waypoint xsi:type="omgdc:Point" x="744" y="280" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="854" y="243.5" width="0" height="0" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="EndEvent_1smos1f_di" bpmnElement="EndEvent_1smos1f">
+        <omgdc:Bounds x="972.2919831223628" y="184.02025316455695" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="953" y="220.02025316455695" width="76" height="38" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0ta0uz2_di" bpmnElement="SequenceFlow_0ta0uz2">
+        <omgdi:waypoint xsi:type="omgdc:Point" x="864" y="202" />
+        <omgdi:waypoint xsi:type="omgdc:Point" x="917" y="202" />
+        <omgdi:waypoint xsi:type="omgdc:Point" x="917" y="202" />
+        <omgdi:waypoint xsi:type="omgdc:Point" x="972" y="202" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="932" y="202" width="0" height="0" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
