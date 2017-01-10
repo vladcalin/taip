@@ -15,15 +15,24 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from app_users.views import home, register, register_user, authenticate_user, login_view, logout_view
+from app_users.views import home, register, register_user, authenticate_user, login_view, logout_view, \
+    groups_view, friends_view, requests_view
 
 urlpatterns = [
+    # GET views
     url(r'^admin/', admin.site.urls),
     url(r'^register_user', register_user),
+    url(r'^groups', groups_view),
+    url(r'^friends', friends_view),
+    url(r'^requests', requests_view),
+    url(r'^login', login_view),
+
+    # actions via POST
     url(r'^authenticate_user', authenticate_user),
     url(r'^register', register),
-    url(r'^login', login_view),
     url(r'^logout', logout_view),
+
+    # root url
     url(r'^', home),
 
 ]

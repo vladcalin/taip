@@ -18,6 +18,18 @@ def login_view(request):
     return render(request, "login.html", {})
 
 
+def groups_view(request):
+    return render(request, "groups.html", {})
+
+
+def friends_view(request):
+    return render(request, "friends.html", {})
+
+
+def requests_view(request):
+    return render(request, "requests.html", {})
+
+
 def register_user(request):
     username = request.POST["username"]
     password = request.POST["password"]
@@ -36,7 +48,7 @@ def authenticate_user(request):
         login(request, user)
         return render(request, "home.html", {})
     else:
-        render(request, "register.html", {"error": "Authentication failed"})
+        return render(request, "login.html", {"error": "Authentication failed"})
 
 
 def logout_view(request):
