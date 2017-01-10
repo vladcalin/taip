@@ -1,0 +1,12 @@
+{% extends "template.html" %}
+
+{% block content %}
+
+    {% if  user.is_authenticated %}
+        Hello {{ user.username }}
+    {% endif %}
+
+
+
+
+{% endblock %}

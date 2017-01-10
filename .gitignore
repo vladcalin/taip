@@ -7,3 +7,4 @@ manifest.mf
 build.xml
 lib/
 /crypto/build/
+db.sqlite3
