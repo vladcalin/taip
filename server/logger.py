@@ -64,7 +64,7 @@ def function1():
 
 
 @TimingAndLoggingAspect
-def make_sum(x, y):
+def make_sum(x: int, y: int):
     print("Inside make_sum()")
     print("computing {} + {}".format(x, y))
     return x + y
